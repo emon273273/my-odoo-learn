@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Pharmacy Inventory Form View -->
+    <record id="view_pharmacy_inventory_form" model="ir.ui.view">
+        <field name="name">pharmacy.inventory.form</field>
+        <field name="model">pharmacy.inventory</field>
+        <field name="arch" type="xml">
+            <form string="Pharmacy Inventory">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="expiry_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Pharmacy Inventory List View -->
+    <record id="view_pharmacy_inventory_list" model="ir.ui.view">
+        <field name="name">pharmacy.inventory.list</field>
+        <field name="model">pharmacy.inventory</field>
+        <field name="arch" type="xml">
+            <list string="Pharmacy Inventory">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="price"/>
+                <field name="expiry_date"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Pharmacy Prescription Form View -->
+    <record id="view_pharmacy_prescription_form" model="ir.ui.view">
+        <field name="name">pharmacy.prescription.form</field>
+        <field name="model">pharmacy.prescription</field>
+        <field name="arch" type="xml">
+            <form string="Pharmacy Prescription">
+                <sheet>
+                    <group>
+                        <field name="prescription_id" readonly="1"/>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="medicine_ids"/>
+                        <field name="prescription_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Pharmacy Prescription List View -->
+    <record id="view_pharmacy_prescription_list" model="ir.ui.view">
+        <field name="name">pharmacy.prescription.list</field>
+        <field name="model">pharmacy.prescription</field>
+        <field name="arch" type="xml">
+            <list string="Pharmacy Prescriptions">
+                <field name="prescription_id"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="prescription_date"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Pharmacy Drug Info Form View -->
+    <record id="view_pharmacy_drug_info_form" model="ir.ui.view">
+        <field name="name">pharmacy.drug.info.form</field>
+        <field name="model">pharmacy.drug.info</field>
+        <field name="arch" type="xml">
+            <form string="Pharmacy Drug Information">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="manufacturer"/>
+                        <field name="side_effects"/>
+                        <field name="dosage"/>
+                        <field name="contraindications"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Pharmacy Drug Info List View -->
+    <record id="view_pharmacy_drug_info_list" model="ir.ui.view">
+        <field name="name">pharmacy.drug.info.list</field>
+        <field name="model">pharmacy.drug.info</field>
+        <field name="arch" type="xml">
+            <list string="Pharmacy Drug Information">
+                <field name="name"/>
+                <field name="manufacturer"/>
+                <field name="side_effects"/>
+                <field name="dosage"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Actions for Pharmacy -->
+    <record id="action_pharmacy_inventory" model="ir.actions.act_window">
+        <field name="name">Pharmacy Inventory</field>
+        <field name="res_model">pharmacy.inventory</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_pharmacy_prescription" model="ir.actions.act_window">
+        <field name="name">Pharmacy Prescription</field>
+        <field name="res_model">pharmacy.prescription</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_pharmacy_drug_info" model="ir.actions.act_window">
+        <field name="name">Pharmacy Drug Information</field>
+        <field name="res_model">pharmacy.drug.info</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

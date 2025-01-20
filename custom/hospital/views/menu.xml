@@ -1,17 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="menu_item_root" name="Hospital"/>
+    <data>
+        <!-- Main Menu -->
+        <menuitem id="menu_hospital_main" name="Hospital" sequence="1" />
+
+        <!-- Front Desk/Reception -->
+        <menuitem id="menu_front_desk" name="Front Desk" parent="menu_hospital_main" sequence="2" />
+        <menuitem id="menu_patient_registration" name="Patient Registration"
+            parent="menu_front_desk" action="action_patient_registration" />
+        <menuitem id="menu_appointments" name="Appointments" parent="menu_front_desk"
+            action="action_appointment" />
+        <menuitem id="menu_check_in_out" name="Check-in/Check-out" parent="menu_front_desk" />
+        <menuitem id="menu_waiting_list" name="Waiting List" parent="menu_front_desk" />
+        <menuitem id="menu_patient_search" name="Patient Search" parent="menu_front_desk" />
+
+        <!-- Inpatient/Ward Management -->
+        <menuitem id="menu_inpatient_management" name="Inpatient Management"
+            parent="menu_hospital_main" sequence="3" />
+        <menuitem id="menu_admissions" name="Admissions" parent="menu_inpatient_management" />
+        <menuitem id="menu_discharges" name="Discharges" parent="menu_inpatient_management" />
+
+        <menuitem id="menu_ward_transfers" name="Ward Transfers" parent="menu_inpatient_management" />
+        <menuitem id="menu_daily_rounds" name="Daily Rounds" parent="menu_inpatient_management" />
+
+        <!-- Outpatient/Clinic -->
+        <menuitem id="menu_outpatient_management" name="Outpatient/Clinic"
+            parent="menu_hospital_main" sequence="4" />
+        <menuitem id="menu_consultations" name="Consultations" parent="menu_outpatient_management" />
+        <menuitem id="menu_outpatient_appointments" name="Appointments"
+            parent="menu_outpatient_management" />
 
 
-    <menuitem id="menu_front_desk" name="Front Desk" parent="menu_item_root" sequence="1"/>
-    <menuitem id="menu_front_emergency" name="Create" parent="menu_item_root" sequence="2"/>
+        <!-- Doctors/Staff -->
+        <menuitem id="menu_doctor_staff" name="Doctors" parent="menu_hospital_main"
+            sequence="5" action="action_doctor" />
+        <menuitem id="menu_doctor_profiles" name="Doctor Profiles" parent="menu_doctor_staff" />
 
-    <!-- Front desk -->
-    <menuitem id="menu_patient_front_desk" name="Patient" parent="menu_front_desk" action="action_front_hospital_patient"/>
-    
-    <menuitem id="menu_doctor_front_desk" name="Doctor" parent="menu_front_desk"  action="action_hospital_doctor"/> 
 
-    <!-- Create  -->
-    <menuitem id="menu_patient_emergency" name="Patient" parent="menu_front_emergency" action="action_patient_emergency"/>
-    <menuitem id="menu_doctor" name="Doctor" parent="menu_front_emergency" action="action_hospital_doctor_emergency"/>
+        <!-- Pharmacy -->
+        <menuitem id="menu_pharmacy" name="Pharmacy" parent="menu_hospital_main" sequence="6" />
+        <menuitem id="menu_inventory_management" name="Inventory Management" parent="menu_pharmacy"
+            action="action_pharmacy_inventory"
+        />
+        <menuitem id="menu_prescription_management" name="Prescription Management"
+            parent="menu_pharmacy" action="action_pharmacy_prescription" />
+        <menuitem id="menu_drug_information" name="Drug Information" parent="menu_pharmacy" />
+
+        <!-- Laboratory/Diagnostics -->
+        <menuitem id="menu_laboratory" name="Laboratory/Diagnostics" parent="menu_hospital_main"
+            sequence="7" />
+        <menuitem id="menu_test_requests" name="Test Requests" parent="menu_laboratory" />
+        <menuitem id="menu_result_entry" name="Result Entry" parent="menu_laboratory" />
+        <menuitem id="menu_test_catalog" name="Test Catalog" parent="menu_laboratory" />
+
+        <!-- Billing/Accounting -->
+        <menuitem id="menu_billing" name="Billing/Accounting" parent="menu_hospital_main"
+            sequence="8" />
+        <menuitem id="menu_invoicing" name="Invoicing" parent="menu_billing" />
+        <menuitem id="menu_payments" name="Payments" parent="menu_billing" />
+
+        <menuitem id="menu_billing_reports" name="Reports" parent="menu_billing" />
+
+        <!-- Reporting/Analytics -->
+        <menuitem id="menu_reporting" name="Reporting/Analytics" parent="menu_hospital_main"
+            sequence="9" />
+        <menuitem id="menu_patient_statistics" name="Patient Statistics" parent="menu_reporting" />
+
+        <menuitem id="menu_financial_reports" name="Financial Reports" parent="menu_reporting" />
+        <menuitem id="menu_custom_reports" name="Custom Reports" parent="menu_reporting" />
+
+
+    </data>
 </odoo>

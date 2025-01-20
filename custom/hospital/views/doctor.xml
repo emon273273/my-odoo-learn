@@ -1,11 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="action_hospital_doctor" model="ir.actions.act_window">
-        <field name="name">Doctor</field>
-        <field name="res_model">hospital.doctor</field>
-        <field name="view_mode">list</field>
-        <field name="help" type="html">
-            <p class="oe_title">Show  Doctor</p>
+    <!-- Doctor Form View -->
+    <record id="view_doctor_form" model="ir.ui.view">
+        <field name="name">hospital.doctor.form</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <sheet>
+                    <group>
+                        <field name="doctor_id" readonly="1"/>
+                        <field name="name"/>
+                        <field name="specialization"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="gender"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
         </field>
+    </record>
+
+    <!-- Doctor List View -->
+    <record id="view_doctor_list" model="ir.ui.view">
+        <field name="name">hospital.doctor.list</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <list string="Doctors">
+                <field name="doctor_id"/>
+                <field name="name"/>
+                <field name="specialization"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action for Doctors -->
+    <record id="action_doctor" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hospital.doctor</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

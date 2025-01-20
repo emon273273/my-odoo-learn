@@ -1,3 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hospital_patient,access.hospital.patient,model_hospital_patient,base.group_user,1,1,1,1
 access_hospital_doctor,access.hospital.doctor,model_hospital_doctor,base.group_user,1,1,1,1
+
+access_hospital_appoinments,access.hospital.appointment,model_hospital_appointment,base.group_user,1,1,1,1
+
+access_pharmacy_inventory,access.pharmacy.inventory,model_pharmacy_inventory,base.group_user,1,1,1,1
+
+access_pharmacy_prescription,access.pharmacy.prescription,model_pharmacy_prescription,base.group_user,1,1,1,1
+
+access_pharmacy_drug_info,access.pharmacy.drug.info,model_pharmacy_drug_info,base.group_user,1,1,1,1
+
